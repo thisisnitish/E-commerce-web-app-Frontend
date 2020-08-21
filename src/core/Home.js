@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from './helper/coreapicalls';
+import Base from './Base';
+import '../styles.css';
 
 export default function Home(){
 
@@ -24,7 +26,7 @@ export default function Home(){
     }, [])
 
     return(
-        <div>
+        <Base title="Home Page" description="Welcome to Tshirt Store">
             <h1>Home Component</h1>
             <div className="row">
                 {products.map((product, index) => {
@@ -35,6 +37,6 @@ export default function Home(){
                     )
                 })}
             </div>
-        </div>
+        </Base>
     );
 }
