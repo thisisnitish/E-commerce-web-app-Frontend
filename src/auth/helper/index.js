@@ -69,7 +69,7 @@ export const signout = (next) => {
         .then((response) => {
             console.log("Signout Success");
             next();
-        });
+        })
         .catch((err) => console.log(err));
     }
 };
