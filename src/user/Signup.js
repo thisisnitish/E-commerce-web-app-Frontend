@@ -52,7 +52,8 @@ const Signup = () => {
             <div className="row">
                 <div className="col-md-6 offset-sm-3 text-left">
                     <div className="alert alert-success" style={{ display: success ? "" : "none" }}>
-                        New Account created successfully, Please login now.
+                        New Account created successfully, Please 
+                        <Link className="ml-2" to="/signin">login now</Link>
                     </div>
                 </div>
             </div>
@@ -116,7 +117,7 @@ const Signup = () => {
             {errorMessage()}
             {signUpForm()}
             <p className="text-white text-center">
-                {JSON.stringify(values)}
+            {JSON.stringify(values)}
             </p>
         </Base>
     );
