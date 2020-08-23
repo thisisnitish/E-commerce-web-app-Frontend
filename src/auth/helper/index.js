@@ -24,11 +24,21 @@ export const signin = user => {
         formData.append(name, user[name])
     }
 
+    // const {email, password} = user;
+    // const formData = new FormData();
+    // formData.append('email', email)
+    // formData.append('password', password)
+
+    for (var key of formData.keys()) {
+        console.log("MYKEY: ", key);
+    }
+
     return fetch(`${API}user/login/`, {
         method: "POST",
         body: formData
     })
     .then(response => {
+        console.log("SUCSESS", response);
         return response.json();
     })
     .catch(err => console.log(err));
@@ -49,6 +59,7 @@ export const isAuthenticated = () => {
     }
     if(localStorage.getItem("jwt")){
         return JSON.parse(localStorage.getItem("jwt"));     //receiving the session token
+        //Todo: compare jwt with database json token
     }
     else{
         return false;
