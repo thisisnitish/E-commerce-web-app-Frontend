@@ -61,6 +61,7 @@ const PaymentB = ({
         let nonce;
         let getNonce = info.instance.requestPaymentMethod()
         .then(data => {
+            console.log("MY DATA ", data);
             nonce = data.nonce;
             const paymentData = {
                 paymentMethodNonce: nonce,
@@ -68,6 +69,7 @@ const PaymentB = ({
             };
             processPayment(userId, token, paymentData)
             .then(response => {
+                console.log("POINT-1", response);
                 if (response.error) {
                     if (response.code == '1') {
                         console.log("PAYMENT FAILED");
@@ -136,7 +138,7 @@ const PaymentB = ({
                             onInstance={instance => (info.instance = instance)}
                             />
 
-                            <button className="btn btn-block btn-success">Buy Now</button>
+                            <button onClick={onPurchase} className="btn btn-block btn-success">Buy Now</button>
                         </div>
                     ) : 
                     (
