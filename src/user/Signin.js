@@ -6,13 +6,13 @@ import { signin, authenticate, isAuthenticated } from '../auth/helper'
 const Signin = () => {
 
     const [values, setValues] = useState({
-        email: "ten@nitish.com",
-        password: "ecom1234",
+        email: "",
+        password: "",
         error: "",
         success: false,
         loading: false,
         didRedirect: false
-    })
+    });
 
     const { email, password, error, success, loading, didRedirect} = values;
 
@@ -68,8 +68,7 @@ const Signin = () => {
             <div className="row">
                 <div className="col-md-6 offset-sm-3 text-left">
                     <div className="alert alert-success" style={{ display: success ? "" : "none" }}>
-                        New Account created successfully, Please
-                        <Link className="ml-2" to="/signin">login now</Link>
+                        Login Successfully..
                     </div>
                 </div>
             </div>
@@ -81,7 +80,7 @@ const Signin = () => {
             <div className="row">
                 <div className="col-md-6 offset-sm-3 text-left">
                     <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
-                        Check all fields again
+                        Please, Check all fields again
                     </div>
                 </div>
             </div>
@@ -113,6 +112,7 @@ const Signin = () => {
                         </div>
                         <button onClick={onSubmit} className="btn btn-success btn-block">Submit</button>
                     </form>
+                    {successMessage()}
                 </div>
             </div>
         );

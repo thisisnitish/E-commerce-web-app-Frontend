@@ -65,7 +65,7 @@ const Signup = () => {
             <div className="row">
                 <div className="col-md-6 offset-sm-3 text-left">
                     <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
-                        Check all fields again
+                        Please, Check all fields again
                     </div>
                 </div>
             </div>
