@@ -7,8 +7,7 @@ export const userinfo = (userId) => {
         method: 'GET',
     })
     .then((response) => {
-        console.log("User id", userId);
-        return response.json();
+        return response.json()
     })
     .catch((err) => console.log(err));
 };
